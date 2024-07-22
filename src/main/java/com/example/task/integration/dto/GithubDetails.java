@@ -5,12 +5,6 @@ import java.util.List;
 public record GithubDetails(
         String repositoryName,
         String login,
-        List<Branch> branches
+        List<GithubBranchResponse> branches
 ) {
-
-    public record Branch(
-            String name,
-            String commitSha
-    ) {
-    }
 }
