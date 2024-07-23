@@ -124,18 +124,16 @@ class GithubFacadeTest {
                     "name3", "branch3_url{/branch}", false, new GithubRepoResponse.Owner(username));
 
             GithubBranchResponse githubBranchResponse = new GithubBranchResponse(
-                    "branchName", new GithubBranchResponse.Commit("1234"));
-            GithubBranchResponse githubBranchResponse2 = new GithubBranchResponse(
                     "branchName2", new GithubBranchResponse.Commit("12345"));
-            GithubBranchResponse githubBranchResponse3 = new GithubBranchResponse(
+            GithubBranchResponse githubBranchResponse2 = new GithubBranchResponse(
                     "branchName3", new GithubBranchResponse.Commit("123456"));
-            GithubBranchResponse githubBranchResponse4 = new GithubBranchResponse(
+            GithubBranchResponse githubBranchResponse3 = new GithubBranchResponse(
                     "branchName4", new GithubBranchResponse.Commit("1234567"));
 
             given(jsonMapper.toObject(any(), any()))
                     .willReturn(List.of(githubRepoResponse, githubRepoResponse2, githubRepoResponse3))
-                    .willReturn(List.of(githubBranchResponse2))
-                    .willReturn(List.of(githubBranchResponse3, githubBranchResponse4));
+                    .willReturn(List.of(githubBranchResponse))
+                    .willReturn(List.of(githubBranchResponse2, githubBranchResponse3));
 
             //when
             List<GithubDetails> actual = systemUnderTest.findRepositoryDetails(username);
