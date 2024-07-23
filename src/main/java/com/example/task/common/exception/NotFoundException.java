@@ -2,13 +2,13 @@ package com.example.task.common.exception;
 
 import lombok.Getter;
 
-@Getter
 public class NotFoundException extends RuntimeException {
 
-    private final int statusCode;
+    @Getter
+    private final int status;
 
-    public NotFoundException(String message, int statusCode) {
+    public NotFoundException(String message, int status) {
         super(message);
-        this.statusCode = statusCode;
+        this.status = status;
     }
 }

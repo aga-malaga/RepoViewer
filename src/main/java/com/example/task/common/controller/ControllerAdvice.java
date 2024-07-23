@@ -17,7 +17,7 @@ class ControllerAdvice {
     @ExceptionHandler(NotFoundException.class)
     ErrorDto handleNotFoundException(NotFoundException exception) {
         log.error(exception.getMessage());
-        return new ErrorDto(exception.getStatusCode(), exception.getMessage());
+        return new ErrorDto(exception.getStatus(), exception.getMessage());
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

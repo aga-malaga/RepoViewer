@@ -27,7 +27,7 @@ class GithubServiceImpl implements GithubFacade {
         private static final String LIST_REPOSITORIES_FORMAT = ROOT + "/users/%s/repos";
     }
 
-    private static final String NOT_FOUND_MESSAGE_FORMAT = "Username %s not found";
+    private static final String NOT_FOUND_MESSAGE_FORMAT = "Username: %s not found";
     private static final String[] HEADERS = {HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE};
 
     private final HttpClientFacade httpClientFacade;
